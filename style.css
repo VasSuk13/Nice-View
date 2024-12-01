@@ -1,0 +1,184 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('./Fonts/Nunito-VariableFont_wght.woff2') format('woff2');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Nunito';
+    src: url('./Fonts/Nunito-Italic-VariableFont_wght.woff2') format('woff2');
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('./Fonts/RobotoCondensed-VariableFont_wght.woff2') format('woff2');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('./Fonts/RobotoCondensed-Italic-VariableFont_wght.woff2') format('woff2');
+    font-style: italic;
+}
+:root {
+    --font-family-title: 'Nunito', sans-serif;
+    --font-family-text: 'Roboto Condensed', arial;
+    --font-size-title: 68px;
+    --font-size-title-small:48px;
+    --font-size-title-mobile: 40px;
+    --font-size-subtitle: 40px;
+    --font-size-subtitle-mobile: 24px;
+    --font-size-text-1: 24px;
+    --font-size-text-1-mobile: 20px;
+    --font-size-text-2: 16px;
+    --font-size-text-2-mobile: 14px;
+    --image-border-radius: 8px;
+    --button-border-radius: 12px;
+    --button-border-radius-mobile: 20px;
+    --button-height:68px;
+    --desktop-button-width: 480px;
+    --tablet-button-width: 400px;
+    --mobile-button-width: 320px;
+    --pop-up-width: 900px;
+    --pop-up-width-mobile: 352px;
+    --pop-up-height: 448px;
+    --pop-up-height-mobile: 484px;
+    --color-main-yellow: #8D6515;
+    --color-main-blue: #2E688D;
+    --color-main-white: #FBFCFC;
+    --color-secondary-yellow: #CEB181;
+    --color-secondary-blue: #2B9EE7;
+    --color-secondary-lightblue: #6CAFD9;
+    --color-secondary-dark: #324052;
+    --color-secondary-gray: #C9E4EA;
+    --color-secondary-brown: #776D67;
+}
+body{
+    width: 100%;
+    box-sizing: border-box;
+    transition: 0.2s ease;
+}
+.lang-link :hover{
+    transform: scale(1.2);
+}
+.header {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.navigation {
+    max-width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 60px;
+    background: linear-gradient(180.00deg, rgb(118, 106, 99),rgba(198, 190, 187, 0.81) 150%);
+}
+.logo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-main-blue);
+    font-family: var(--font-family-title);
+    font-size: 32px;
+    font-weight: 400;
+}
+.address-link {
+    color: var(--color-main-white);
+    font-family: var(--font-family-text);
+    font-size: var(--font-size-text-1);
+    position: relative;
+}
+.nav-list {
+    display: flex;
+    max-width: 300px;
+    min-width: 150px;
+    justify-content: space-between;
+}
+.nav-link, .lang-link {
+    padding: 10px;
+    color: var(--color-main-white);
+    font-family: var(--font-family-text);
+    font-size: var(--font-size-text-2);
+}
+.lang-list{
+    display: flex;
+    flex-direction: row;
+}
+.lang-list-item {
+    height: 100%;
+}
+.lang-link {
+    padding-inline: 5px;
+    margin-inline: 5px;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .navigation {
+    padding-inline: 30px;
+    }
+    .logo-container {
+        font-size:24px;
+    }
+    .address-link {
+        font-size: var(--font-size-text-1-mobile);
+    }
+    .nav-link, .lang-link {
+        font-size: var(--font-size-text-2-mobile);
+    }
+    .cross-button {
+        display: none;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .nav-list {
+        position: absolute;
+        padding-top: 30px;
+        top: 0;
+        right: 0;
+        max-width: 100%;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--color-secondary-brown);
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        z-index: 2;
+    }
+    .nav-link {
+        width: 100%;
+        padding-left: 5%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+    }
+    .list-item {
+        width: 100%;
+        height: 50px;
+    }
+    .lang-list {
+        position: absolute;
+        left: 10px;
+        top: 200px;
+        z-index: 3;
+    }
+    .cross-button {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        color: var(--color-main-white);
+        border: none;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 20px;
+        z-index: 3;
+    }
+}
